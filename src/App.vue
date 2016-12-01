@@ -12,27 +12,27 @@ import { iconSvg } from './vuex/data/iconfonts.js'
 import NavigationLeft from './components/NavigationLeft.vue'
 
 export default {
-	data () {
-  	return {
-  		/*
+	/*
   		 * iconSvg：svg图标数据列表
   		 * iconData：引用图标标签
   		 */
+	data () {
+  	return {
   		iconSvg: iconSvg,
   		iconData: {
   			iconlist: ['<use xlink:href="#icon-home"></use>', '<use xlink:href="#icon-edit"></use>'],
   			icon_within: '<use xlink:href="#icon-playfill"></use>',
   			icon_jj: ['<use xlink:href="#icon-plus"></use>', '<use xlink:href="#icon-jianhao"></use>']
-  		},
+  		}
   	}
   },
   components: {
     NavigationLeft
   },
-  computed: {
   	/*
   	 * navData： store引入的导航数据表
   	 */
+  computed: {
     navData () {
       return this.$store.state.navlist
     }
