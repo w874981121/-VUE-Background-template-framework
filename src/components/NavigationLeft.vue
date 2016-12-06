@@ -16,6 +16,7 @@
   	line-height: 36px;
   	height: 36px;
   	padding:0 10px;
+  	margin-top: 10px;
   	cursor: pointer;
   	}
   	/*一级导航 icon属性*/
@@ -44,7 +45,7 @@
   	list-style: none;
   	padding: 5px 15px;
   	}
-  .Navigation-left a{
+  .Navigation-left .a{
   	width: 100%;
   	height: 20px;
   	line-height: 20px;
@@ -52,6 +53,7 @@
   	color: #fff; 
   	text-decoration: none;
   	display: inline-block;
+  	cursor: pointer;
   	}
   	/*次级导航 icon属性--margin-top为上级导航的一半时为居中--*/
   .Navigation-left .box li .icon{
@@ -73,14 +75,12 @@
                 {{i.name}}
                 <svg class="icon font_" v-html="stateIcon(i.stateList,index)"></svg>
 		    </h3>
-		    <ul v-if="i.stateList">
+		    <ul v-show="i.stateList">
 		    	<li v-for="list in i.list" v-bind:key='list.id' v-if="list.Jurisdiction">
-		    		<a href="/">
-		    			<svg class="icon" v-html="iconData.icon_within">
-		    				
-		    			</svg>
+		    		<router-link class='a' :to='list.Url'>
+		    			<svg class="icon" v-html="iconData.icon_within"></svg>
 		    			{{list.name}}
-		    		</a>
+		    		</router-link>
 		    	</li>
 		    </ul>
 		</div>
@@ -98,16 +98,16 @@ stateIcon：“+” ： “-” icon的状态修改
 export default {
   methods: {
     stateSwitch: function (index) {
-    	var st=this.navData[index].stateList;
-    	for(var i=0,navDatas=this.navData.length;i<navDatas;i++){
-          this.navData[i].stateList=false;
+    	let st = this.navData[index].stateList, i = 0, navDatas = this.navData.length
+    	for(;i < navDatas;i++){
+        this.navData[i].stateList=false;
     	}
-    	this.navData[index].stateList=!st;
+    	  this.navData[index].stateList=!st;
     },
     stateIcon: function (state,index) {
     	return state ? this.iconData.icon_jj[1] : this.iconData.icon_jj[0]
     }
   },
-  props: ['iconData', 'navData'],
+  props: ['iconData', 'navData']
 }
 </script>

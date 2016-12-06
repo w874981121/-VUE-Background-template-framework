@@ -3,38 +3,49 @@
   	<!--SVG-icon 注入-->
     <div v-show="false" v-html="iconSvg"></div>
     <!---->
-    <NavigationLeft :iconData="iconData" :navData="navData"></NavigationLeft>
+    <top></top>
+    <div class="content" v-bind:style="{ height: height }">
+    	<div class="navbox">
+        <NavigationLeft :iconData="iconData" :navData="navData"> </NavigationLeft>
+      </div>
+      <div class="viewbox">
+      	<router-view> </router-view>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { iconSvg } from './vuex/data/iconfonts.js'
 import NavigationLeft from './components/NavigationLeft.vue'
+import Top from './components/Top.vue'
 
 export default {
 	/*
-  		 * iconSvg：svg图标数据列表
   		 * iconData：引用图标标签
   		 */
 	data () {
   	return {
-  		iconSvg: iconSvg,
-  		iconData: {
-  			iconlist: ['<use xlink:href="#icon-home"></use>', '<use xlink:href="#icon-edit"></use>'],
-  			icon_within: '<use xlink:href="#icon-playfill"></use>',
-  			icon_jj: ['<use xlink:href="#icon-plus"></use>', '<use xlink:href="#icon-jianhao"></use>']
-  		}
+      iconSvg: iconSvg,
+      height: window.innerHeight-60+'px'
   	}
-  },
+ },
+  //组件注入
   components: {
-    NavigationLeft
+    NavigationLeft,
+    Top
   },
   	/*
   	 * navData： store引入的导航数据表
+  	 * iconData: 导航icon
   	 */
+  	
   computed: {
     navData () {
       return this.$store.state.navlist
+    },
+    iconData () {
+    	return this.$store.state.iconDataobj
     }
   }
 }
@@ -47,6 +58,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
 }
+.navbox,.viewbox{
+	float: left;
+	height: 100%;
+}
+
+
 
 .icon {
   /* 通过设置 font-size 来改变图标大小 */
