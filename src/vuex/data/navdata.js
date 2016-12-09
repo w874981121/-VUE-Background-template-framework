@@ -18,42 +18,42 @@ export const navData = [
       {
         name: '通道基础信息',
         Url: '/channelInfo',
-        Jurisdiction: true
+        Jurisdiction: true,
       },
       {
         name: '中信回传数据查询',
         Url: '/form_wizards',
-        Jurisdiction: true
+        Jurisdiction: true,
       },
       {
         name: '上游消息历史查询',
         Url: '/wysiwyg',
-        Jurisdiction: false
+        Jurisdiction: false,
       },
       {
         name: '上游机构用户信息',
         Url: '/gwCustomer',
-        Jurisdiction: true
+        Jurisdiction: true,
       },
       {
         name: '中信对账',
         Url: '/citicPayBill',
-        Jurisdiction: true
+        Jurisdiction: true,
       },
       {
         name: '中信对账汇总',
         Url: '/citicPaySummary',
-        Jurisdiction: true
+        Jurisdiction: true,
       },
       {
         name: '对账差异汇总',
         Url: '/accountBalance',
-        Jurisdiction: true
+        Jurisdiction: true,
       },
       {
         name: '对账差异明细',
-        Url: '/accountBalanceDetail',
-        Jurisdiction: true
+        Url: '/detailAccountBalance',
+        Jurisdiction: true,
       }
     ]
   },
@@ -65,62 +65,73 @@ export const navData = [
       {
         name: '机构管理',
         Url: '/general_forms',
-        Jurisdiction: true
+        Jurisdiction: true,
       },
       {
         name: '机构商户',
         Url: '/form_layouts',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构上游用户对应关系',
         Url: '/form_validation',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构冻结流水查询',
         Url: '/orgFreezon',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构费率信息',
         Url: '/orgRateInfo',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构结算单查询',
         Url: '/orgSettleHistory',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构交易流水',
         Url: '/orgTradeHistory',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构子账户',
         Url: '/orgSubAccount',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构结算银行信息',
         Url: '/orgSettleBank',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构账户资金流水',
         Url: '/orgCapital',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构订单流水',
         Url: '/orgOrderRequest',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       },
       {
         name: '机构限额',
         Url: '/orgLimitAmount',
-        Jurisdiction: true
+        Jurisdiction: true,
+        
       }
     ]
   }

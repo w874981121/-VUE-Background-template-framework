@@ -5,10 +5,10 @@
   	height: 100%;
   	overflow-y: auto;
   	color: #8f939e;
-  	padding: 10px 0;
   	}
   .Navigation-left .box{
   	padding: 0 10px;
+  	overflow: hidden;
   	}
   .Navigation-left .box .h3{
   	font-size:16px;
@@ -32,7 +32,7 @@
   	background: #fff;
   	color: #1d2939;
   	border-radius: 4px ;
-  	}
+  }
   .Navigation-left .box .h3hover{
   	background: #fff;
   	color: #1d2939;
@@ -40,11 +40,11 @@
   }
   .Navigation-left .box ul{
   	padding: 0;
-  	}
+  }
   .Navigation-left .box li{
   	list-style: none;
   	padding: 5px 15px;
-  	}
+  }
   .Navigation-left .a{
   	width: 100%;
   	height: 20px;
@@ -55,6 +55,16 @@
   	display: inline-block;
   	cursor: pointer;
   	}
+  .Navigation-left .a:hover{
+  	background: #fff;
+  	color: #333333;
+  	border-radius:3px ;
+  }
+  .Navigation-left .router-link-active{
+  	background: #fff;
+  	color: #333333;
+  	border-radius:3px ;
+  }
   	/*次级导航 icon属性--margin-top为上级导航的一半时为居中--*/
   .Navigation-left .box li .icon{
   	color: #8f939e;
@@ -76,8 +86,8 @@
                 <svg class="icon font_" v-html="stateIcon(i.stateList,index)"></svg>
 		    </h3>
 		    <ul v-show="i.stateList">
-		    	<li v-for="list in i.list" v-bind:key='list.id' v-if="list.Jurisdiction">
-		    		<router-link class='a' :to='list.Url'>
+		    	<li v-for="list in i.list" v-if="list.Jurisdiction">
+		    		<router-link class="a" :to='list.Url'>
 		    			<svg class="icon" v-html="iconData.icon_within"></svg>
 		    			{{list.name}}
 		    		</router-link>
@@ -95,6 +105,7 @@ navData：导航数据表
 stateSwitch: 导航的开合状态修改
 stateIcon：“+” ： “-” icon的状态修改
 */
+/**跳转的权限设置**/
 export default {
   methods: {
     stateSwitch: function (index) {
