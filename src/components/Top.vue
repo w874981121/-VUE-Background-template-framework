@@ -10,7 +10,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scope>
 #top{
 	width: 100%;
 	height: 60px;

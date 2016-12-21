@@ -17,15 +17,17 @@
 <script type="text/javascript">
   import NavigationLeft from '../components/NavigationLeft.vue'
   import Top from '../components/Top.vue'
+  import { navData, iconData } from '../data/navdata.js'
 
 export default {
+	name:"content",
 	/*
   		 * iconData：引用图标标签
   		 */
 	data () {
   	return {
-//    iconSvg: iconSvg,
-//    vwindth: window.innerWidth-220+'px'
+      navData: navData,
+      iconData: iconData
   	}
   },
   methods: {},
@@ -33,47 +35,45 @@ export default {
   components: {
     NavigationLeft,
     Top
-  },
+  }
   	/*
   	 * navData： store引入的导航数据表
   	 * iconData: 导航icon
   	 */
-  	
-  computed: {
-    navData () {
-      return this.$store.state.navlist
-    },
-    iconData () {
-    	return this.$store.state.iconDataobj
-    }
-  }
+//computed: {
+//  navData () {
+//    return this.$store.state.navlist
+//  },
+//  iconData () {
+//  	return this.$store.state.iconDataobj
+//  }
+//}
 }  
 </script>
-<style type="text/css">
+<style lang="scss" scope>
 .top{
 	position:absolute; 
 	top:0;
 }
 .content{
-	position:absolute; 
-	width:100%; 
-	top:60px; 
-	bottom:0;
-}
-
-
-.navbox{
-  position: absolute;
-  top: 0px;
-  left: 0;
-  height: 100%;
-}
-.viewbox{
-	padding-left:220px;
+  position:absolute; 
+  width:100%; 
+  top:60px; 
+  bottom:0;
+  .navbox{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 100%;
+  }
+  .viewbox{
+    padding-left:220px;
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
+  }
 }
+
 .footer{
 	width: 100%;
 	height: 30px;

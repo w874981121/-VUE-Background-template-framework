@@ -10,6 +10,7 @@
  * */
 //vue主体引入
 import Vue from 'vue'
+
 //路由组件引入
 import VueRouter from 'vue-router'
 /* 页面组件引入 */
@@ -42,7 +43,7 @@ import OrgLimitAmount from '../page/two/orgLimitAmount.vue'   //机构限额
 
 /**安装路由功能**/
 Vue.use(VueRouter)
-/*path:(参数为路径)**component：(参数为模块名)****/
+/*path:(参数为路径)**component：(参数为模块名)**children:(参数为二级路由)**/
 
 /* routes path路径名设置尽量避免两个路径字段前办部分相同，会造成 点击后样式类多处添加。 */
 const routes = [
@@ -73,7 +74,11 @@ const routes = [
 //路径配置项    设置为固定量，在main文件引入注入全局
 export const router = new VueRouter({ routes })
 //
+//登陆状态文件
+import {state} from '../vuex/loginState/login.js'
 ///**跳转的权限设置**/
-//router.beforeEach((to, from, next) => {
-//  next()//执行跳转
-//})
+router.beforeEach((to, from, next) => {
+	if(state.login){
+		next()
+	}
+})

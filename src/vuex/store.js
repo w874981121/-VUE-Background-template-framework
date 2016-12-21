@@ -1,18 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { navData, iconData } from './data/navdata.js'
+import {state,mutations} from './loginState/login.js'
 
 
 Vue.use(Vuex)
 
-const state = {
-	//导航列表名称数组
-  navlist: navData,
-    //引用图标标签
-  iconDataobj: iconData,
-    //登陆状态
-  login:true
-}
 export default new Vuex.Store({
-  state
+  state,
+  mutations
 })

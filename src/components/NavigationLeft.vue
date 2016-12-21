@@ -1,80 +1,79 @@
-<style type="text/css">
+<style lang="scss" scope>
   .Navigation-left{
   	width: 220px;
   	background: #1d2939;
   	height: 100%;
   	overflow-y: auto;
   	color: #8f939e;
-  	}
-  .Navigation-left .box{
-  	padding: 0 10px;
-  	overflow: hidden;
-  	}
-  .Navigation-left .box .h3{
-  	font-size:16px;
-  	font-weight: initial;
-  	line-height: 36px;
-  	height: 36px;
-  	padding:0 10px;
-  	margin-top: 10px;
-  	cursor: pointer;
-  	}
-  	/*一级导航 icon属性*/
-  .Navigation-left .box .h3 .icon{
-  	margin-top: 18px;
-  	font-size:20px;
-  	}
-  .Navigation-left .box .h3 .font_{
-  	font-size: 14px;
-  	float:right;
-  }
-  .Navigation-left .box .h3:hover{
-  	background: #fff;
-  	color: #1d2939;
-  	border-radius: 4px ;
-  }
-  .Navigation-left .box .h3hover{
-  	background: #fff;
-  	color: #1d2939;
-  	border-radius: 4px;
-  }
-  .Navigation-left .box ul{
-  	padding: 0;
-  }
-  .Navigation-left .box li{
-  	list-style: none;
-  	padding: 5px 15px;
-  }
-  .Navigation-left .a{
-  	width: 100%;
-  	height: 20px;
-  	line-height: 20px;
-  	font-size: 12px;
-  	color: #fff; 
-  	text-decoration: none;
-  	display: inline-block;
-  	cursor: pointer;
-  	}
-  .Navigation-left .a:hover{
-  	background: #fff;
-  	color: #333333;
-  	border-radius:3px ;
-  }
-  .Navigation-left .router-link-active{
-  	background: #fff;
-  	color: #333333;
-  	border-radius:3px ;
-  }
-  	/*次级导航 icon属性--margin-top为上级导航的一半时为居中--*/
-  .Navigation-left .box li .icon{
-  	color: #8f939e;
-  	font-size: 12px;
-  	margin:10px 5px;
-  	}
-  .Navigation-left .box li .icon:hover{
-  	color: #fff;
+  	.box{
+  	  padding: 0 10px;
+   	  overflow: hidden;
+   	  .h3{
+  	    font-size:16px;
+  	    font-weight: initial;
+  	    line-height: 36px;
+  	    height: 36px;
+  	    padding:0 10px;
+  	    margin-top: 10px;
+  	    cursor: pointer;
+  	    .icon{
+  	      margin-top: 18px;
+  	      font-size:20px;
+  	    }
+  	    .font_{
+  	      font-size: 14px;
+  	      float:right;
+        }
+        &:hover{
+        	background: #fff;
+  	      color: #1d2939;
+  	      border-radius: 4px ;
+        }
+  	  }
+  	  .h3hover{
+  	    background: #fff;
+  	    color: #1d2939;
+  	    border-radius: 4px;
+      }
+      ul{
+  	    padding: 0;
+      }
+      li{
+  	    list-style: none;
+  	    padding: 5px 15px;
+  	    .a{
+  	      width: 100%;
+  	      height: 20px;
+  	      line-height: 20px;
+  	      font-size: 12px;
+  	      color: #fff; 
+  	      text-decoration: none;
+  	      display: inline-block;
+  	      cursor: pointer;
+  	      &:hover{
+  	      	background: #fff;
+  	        color: #333333;
+            border-radius:3px ;
+  	      }
+  	    }
+  	    .router-link-active{
+  	      background: #fff;
+  	      color: #333333;
+  	      border-radius:3px ;
+        }
+        .icon{/*次级导航 icon属性--margin-top为上级导航的一半时为居中--*/
+  	      color: #8f939e;
+  	      font-size: 12px;
+  	      margin:10px 5px;
+          &:hover{
+          	color: #fff;
+          }
+  	    }
+      }
+      
   	}
   	
+  }  	
 </style>
   
 <template>
@@ -107,6 +106,7 @@ stateIcon：“+” ： “-” icon的状态修改
 */
 /**跳转的权限设置**/
 export default {
+	name:"navigationleft",
   methods: {
     stateSwitch: function (index) {
     	let st = this.navData[index].stateList, i = 0, navDatas = this.navData.length

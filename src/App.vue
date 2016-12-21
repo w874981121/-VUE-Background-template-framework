@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { iconSvg } from './vuex/data/iconfonts.js'
+import { iconSvg } from './data/iconfonts.js'
 
 export default {
 	/*
